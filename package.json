@@ -1,0 +1,19 @@
+{
+  "name": "dice-api",
+  "version": "1.0.0",
+  "description": "Create a web API using Express and the roll-dice module",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js --port=5555"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-fall/a04-jessicamlynch.git"
+  },
+  "author": "jessicamlynch",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-fall/a04-jessicamlynch/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-fall/a04-jessicamlynch#readme"
+}
