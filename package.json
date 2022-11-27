@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Create a web API using Express and the roll-dice module",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "node server.js --port=5555"
   },
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/comp426-2022-fall/a04-jessicamlynch/issues"
   },
-  "homepage": "https://github.com/comp426-2022-fall/a04-jessicamlynch#readme"
+  "homepage": "https://github.com/comp426-2022-fall/a04-jessicamlynch#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "minimist": "^1.2.7"
+  }
 }
