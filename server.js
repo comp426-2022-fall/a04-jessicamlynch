@@ -38,23 +38,23 @@ app.post('/app/roll/', (req, res) => {
 
 // 6. endpoint /app/roll/:sides/ for default rolls and dice, input sides
 app.get('/app/roll/:sides/', (req, res) => {
-  res.send(roll(parseInt(req.body.sides),
+  res.send(roll(parseInt(req.params.sides),
                 default_dice,
                 default_rolls));
 });
 
 // 7. endpoint /app/roll/:sides/:dice/ for default rolls, input sides and dice
 app.get('/app/roll/:sides/:dice/', (req, res) => {
-  res.send(roll(parseInt(req.body.sides),
-                parseInt(req.body.dice),
+  res.send(roll(parseInt(req.params.sides),
+                parseInt(req.params.dice),
                 default_rolls));
 });
 
 // 8. endpoint /app/roll/:sides/:dice/:rolls/ for input sides, dice, and rolls
 app.get('app/roll/:sides/:dice/:rolls/', (req, res) => {
-  res.send(roll(parseInt(req.body.sides),
-                parseInt(req.body.dice),
-                parseInt(req.body.rolls)));
+  res.send(roll(parseInt(req.params.sides),
+                parseInt(req.params.dice),
+                parseInt(req.params.rolls)));
 });
 
 // 2. default api endpoint returns '404 not found'
