@@ -16,11 +16,6 @@ const port = args.port || 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// 2. default api endpoint returns '404 not found'
-app.get('*', (req, res) => {
-  res.status(404).send('404 not found');
-});
-
 // 3. Check endpoint at /app/ that returns '200 OK'
 app.get('/app/', (req, res) => {
   res.status(200).send('200 OK');
@@ -30,7 +25,7 @@ const default_sides = 6;
 const default_dice = 2;
 const default_rolls = 1;
 
-// 4. Endpoint /app/roll/ for default sides, dice, and rolls 
+// 4. Endpoint /app/roll/ for default sides, dice, and rolls
 app.get('/app/roll/', (req, res) => {
   res.send(roll(default_sides, default_dice, default_rolls));
 });
@@ -60,6 +55,11 @@ app.get('app/roll/:sides/:dice/:rolls/', (req, res) => {
   res.send(roll(parseInt(req.body.sides),
                 parseInt(req.body.dice),
                 parseInt(req.body.rolls)));
+});
+
+// 2. default api endpoint returns '404 not found'
+app.get('*', (req, res) => {
+  res.status(404).send('404 not found');
 });
 
 // listen to port
