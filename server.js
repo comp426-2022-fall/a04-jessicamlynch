@@ -32,9 +32,7 @@ const default_rolls = 1;
 
 // 4. Endpoint /app/roll/ for default 2 six-sided dice rolls at once
 app.get('/app/roll/', (req, res) => {
-  res.send(roll(default_sides,
-                default_dice,
-                default_rolls));
+  res.send(roll(default_sides, default_dice, default_rolls));
 });
 
 app.post('/app/roll/', (req, res) => {
@@ -43,10 +41,10 @@ app.post('/app/roll/', (req, res) => {
                 parseInt(req.body.rolls)));
 });
 
-// 6. endpoint /app/roll/:sides/ for default sides and rolls, input dice
+// 6. endpoint /app/roll/:sides/ for default rolls and dice, input sides
 app.get('/app/roll/:sides/', (req, res) => {
-  res.send(roll(default_sides,
-                parseInt(req.body.dice),
+  res.send(roll(parseInt(req.body.sides),
+                default_dice,
                 default_rolls));
 });
 
