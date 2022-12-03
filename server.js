@@ -59,7 +59,7 @@ app.get('app/roll/:sides/:dice/:rolls/', (req, res) => {
 
 // 2. default api endpoint returns '404 not found'
 app.get('*', (req, res) => {
-  res.status(404).send('404 not found');
+  res.status(404).send('404 NOT FOUND');
 });
 
 // listen to port
